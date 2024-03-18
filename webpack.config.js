@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: './src/js/index.js', // Точка входа для сборки проекта
+    entry: ['./src/js/index.js', './src/js/2.13/index.js'], // Точка входа для сборки проекта
 
     output: {
-        filename: 'bundle.js', // Имя выходного файла сборки
+        filename: '[name].js', // Имя выходного файла сборки
         path: path.resolve(__dirname, 'dist'), // Путь для выходного файла сборки
     },
 
