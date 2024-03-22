@@ -4,8 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
+    context: path.resolve(__dirname, 'src'),
     mode: 'development', // Режим сборки
-    entry: './src/js/index.js', // Точка входа для сборки проекта
+    entry: './js/index.js', // Точка входа для сборки проекта
 
     output: {
         filename: '[name].js', // Имя выходного файла сборки
@@ -23,7 +24,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/js/index.html' ,
+            template: './js/index.html' ,
         }),
 
         new MiniCssExtractPlugin (),
