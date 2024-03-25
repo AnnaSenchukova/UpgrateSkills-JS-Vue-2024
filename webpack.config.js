@@ -19,6 +19,17 @@ module.exports = {
                 test: /\.css$/i, // Регулярное выражение для обработки файлов с расширением .css
                 use: [MiniCssExtractPlugin.loader, 'css-loader'], // Загрузчики, используемые для обработки CSS-файлов
             },
+            {
+                test: /\.(png|jpg|jpeg|svg|gif|webp)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]'
+                        }
+                    }
+                ]
+            },
         ],
     },
 
