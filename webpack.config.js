@@ -30,12 +30,16 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+            },
         ],
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './js/index.html' ,
+            template: './js/index.pug' ,
         }),
 
         new MiniCssExtractPlugin (),
