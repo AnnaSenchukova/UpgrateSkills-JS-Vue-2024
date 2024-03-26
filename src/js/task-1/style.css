@@ -15,6 +15,7 @@ input, button, p {
 }
 
 .panda {
+	height: 200px;
     background-image: url("img/panda.jpg");
     background-size: auto 200px;
     background-repeat: no-repeat;

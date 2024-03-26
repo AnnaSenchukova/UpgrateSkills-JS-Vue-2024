@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    mode: 'development', // Режим сборки
+    // mode: 'development', // Режим сборки
     entry: './js/index.js', // Точка входа для сборки проекта
 
     output: {
@@ -18,18 +18,14 @@ module.exports = {
             {
                 test: /\.css$/i, // Регулярное выражение для обработки файлов с расширением .css
                 use: [MiniCssExtractPlugin.loader, 'css-loader'], // Загрузчики, используемые для обработки CSS-файлов
-            },
-            {
-                test: /\.(png|jpg|jpeg|svg|gif|webp)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'img/[name].[ext]'
-                        }
-                    }
-                ]
-            },
+			},
+			{
+				test: /\.(png|jpe?g|gif|webp|svg)$/,
+				type: 'asset',
+				generator: {
+					filename: 'img/[name].[contenthash:6][ext]',
+				},
+			},
             {
                 test: /\.pug$/,
                 loader: 'pug-loader',
@@ -39,11 +35,10 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './js/index.pug' ,
+            template: './js/index.pug',
         }),
-
-        new MiniCssExtractPlugin (),
-        new CleanWebpackPlugin (),
+        new MiniCssExtractPlugin(),
+        new CleanWebpackPlugin(),
 
     ],
 
@@ -54,6 +49,4 @@ module.exports = {
         },
         open: true, // Автоматически открывать браузер
     },
-
-
 };
