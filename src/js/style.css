@@ -1,0 +1,19 @@
+body {
+    padding: 0 30px;
+
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Georgia", serif;
+    color: #222222;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: normal;
+}
+
+pre,
+code {
+    font-family: "Courier New", "Courier", monospace;
+    color: #6a2cce;
+}
