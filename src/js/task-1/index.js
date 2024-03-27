@@ -1,10 +1,11 @@
-import "./style.css";
-
-function addNumbers() {
-    const num1 = parseFloat(document.getElementById("number1").value);
-    const num2 = parseFloat(document.getElementById("number2").value);
-    const result = num1 * num2;
-    document.getElementById("result").innerText = `Result: ${result}`;
+function isEmpty(obj) {
+    for(let key in obj) {
+        return false;
+    }
+    return true;
 }
 
-document.getElementById("calculate").addEventListener("click", addNumbers);
+let schedule = {};
+console.log('Task-1. Проверка на пустоту объекта: ' + isEmpty(schedule)); // true
+schedule["8:30"] = "get up";
+console.log('Task-1. Проверка на пустоту объекта: ' + isEmpty(schedule)); // false
