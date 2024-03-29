@@ -1,15 +1,19 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    padding: 0 30px;
+
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Georgia", serif;
+    color: #222222;
 }
 
-input, button, p {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 10px;
-    color: blue;
+h2 {
+    font-size: 20px;
+    line-height: normal;
+}
+
+pre,
+code {
+    font-family: "Courier New", "Courier", monospace;
+    color: #6a2cce;
 }
